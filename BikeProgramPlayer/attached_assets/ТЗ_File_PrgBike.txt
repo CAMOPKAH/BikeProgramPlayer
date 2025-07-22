@@ -1,0 +1,120 @@
+Формат файл цикличной программы тренеровок на велосипеде PrgBike
+Формат имени файла: PrgBikeCycle_[Короткое имя файла].json
+
+Каденс тренер фмт
+
+### Полное описание формата файла тренировок для велостанка (версия 1.2)
+
+#### 1. Общая структура
+Файл в формате JSON с обязательными разделами:
+- formatVersion - версия формата (строка)
+- metadata - метаинформация о тренировке
+- workoutPlan - план тренировки
+
+#### 2. Метаданные (metadata)
+JSON
+
+{
+  "id": "UUID в строковом формате",
+  "title": "Название тренировки",
+  "description": "Описание",
+  "author": "Автор/тренер",
+  "creationDate": "Дата в ISO 8601",
+  "modificationDate": "Дата в ISO 8601",
+  "tags": ["список", "тегов"],
+  "difficulty": "easy/medium/hard"  
+}
+
+3. План тренировки (workoutPlan)
+Основные поля:
+- totalDurationSec - общая длительность в секундах
+- targets - целевые показатели
+- segments - массив сегментов тренировки
+
+##### 3.1 Сегмент тренировки
+JSON
+
+
+{
+  "type": "warmup/interval/cooldown/recovery",
+  "durationSec": 600,
+  "targetPower": {
+    "type": "constant/ramp/step",
+    "value": 150,
+    "start": 100,
+    "end": 200
+  },
+  "targetCadence": {
+    "min": 80,
+    "max": 90
+  },
+  "resistance": 50,
+  "positionSettings": {
+    "handsPosition": "hoods/drops/tops/aerobars",
+    "bodyPosition": "seated/standing",
+    "legFocus": "both/left/right"
+  },
+  "coachComments": [
+    {
+      "triggerTimeSec": 30,
+      "message": "Текст реплики",
+      "type": "instruction/motivation/warning",
+      "durationSec": 5,
+      "priority": "low/medium/high"
+    }
+  ]
+}
+4. Правила валидации
+4.1. Обязательные поля:
+   - formatVersion, metadata.id, workoutPlan.segments
+   - Для каждого сегмента: type, durationSec
+   - Для реплик: triggerTimeSec, message
+
+4.2. Типы данных:
+   - Время - целые числа (секунды)
+   - Мощность - числа с плавающей точкой (Вт)
+   - Проценты - числа от 0 до 100
+
+4.3. Ограничения:
+   - Сумма длительностей сегментов должна равняться totalDurationSec
+   - triggerTimeSec не может превышать длительность сегмента
+   - Распределение нагрузки на ноги должно суммироваться в 100%
+
+#### 5. Пример использования
+JSON
+
+
+{
+  "formatVersion": "1.2",
+  "metadata": {
+    "id": "a1b2c3d4-e5f6-7890",
+    "title": "Интервальная тренировка",
+    "author": "AI Тренер"
+  },
+  "workoutPlan": {
+    "segments": [
+      {
+        "type": "warmup",
+        "durationSec": 300,
+        "targetPower": {
+          "type": "ramp",
+          "start": 100,
+          "end": 150
+        }
+      }
+    ]
+  }
+}
+#### 9. Рекомендации по реализации
+1. Для работы с большими файлами:
+   - Используйте потоковое чтение/запись
+   - Оптимальная частота записи данных: 1-10 Гц
+2. Для условий в triggerCondition:
+   - Реализуйте простой DSL-парсер
+   - Поддерживайте базовые операторы: >, <, >=, <=, ==, &&, ||
+
+3. Обработка ошибок:
+   - Валидируйте JSON по схеме
+   - Проверяйте согласованность данных (суммы длительностей и т.д.)
+
+Формат обеспечивает полное описание тренировки - от плана до результатов выполнения, с поддержкой биомеханических данных и обратной связи тренера.

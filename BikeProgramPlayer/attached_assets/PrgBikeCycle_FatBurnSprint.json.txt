@@ -1,0 +1,170 @@
+{
+    "formatVersion": "1.2",
+    "metadata": {
+        "id": "uuid-1234-5678-90ab-cdef12345678",
+        "title": "FatBurn Sprint Cycle",
+        "description": "HIIT-тренировка для активного жиросжигания с чередованием спринтов и восстановления",
+        "author": "AI Coach",
+        "creationDate": "2024-03-20T10:00:00Z",
+      "modificationDate": "2024-03-20T10:00:00Z",
+
+        "tags": [
+            "fat burning",
+            "HIIT",
+            "cycling",
+            "interval"
+        ],
+        "difficulty": "medium"
+    },
+    "workoutPlan": {
+        "totalDurationSec": 900,
+        "segments": [
+            {
+                "type": "warmup",
+                "durationSec": 180,
+                "targetPower": {
+                    "type": "ramp",
+                    "start": 100,
+                    "end": 150
+                },
+                "targetCadence": {
+                    "min": 70,
+                    "max": 80
+                },
+                "resistance": 50,
+                "positionSettings": {
+                    "handsPosition": "hoods",
+                    "bodyPosition": "seated",
+                    "legFocus": "both"
+                },
+                "coachComments": [
+                    {
+                        "triggerTimeSec": 0,
+                        "message": "Начните с легкого темпа, постепенно увеличивая сопротивление",
+                        "type": "instruction",
+                        "durationSec": 5,
+                        "priority": "medium"
+                    }
+                ]
+            },
+            {
+                "type": "interval",
+                "durationSec": 60,
+                "targetPower": {
+                    "type": "constant",
+                    "value": 250
+                },
+                "targetCadence": {
+                    "min": 90,
+                    "max": 100
+                },
+                "resistance": 70,
+                "positionSettings": {
+                    "handsPosition": "drops",
+                    "bodyPosition": "standing"
+                },
+                "coachComments": [
+                    {
+                        "triggerTimeSec": 0,
+                        "message": "Максимальный спринт! Увеличьте сопротивление до 70%",
+                        "type": "motivation",
+                        "durationSec": 5,
+                        "priority": "high"
+                    }
+                ]
+            },
+            {
+                "type": "recovery",
+                "durationSec": 60,
+                "targetPower": {
+                    "type": "constant",
+                    "value": 120
+                },
+                "targetCadence": {
+                    "min": 70,
+                    "max": 80
+                },
+                "resistance": 40,
+                "coachComments": [
+                    {
+                        "triggerTimeSec": 0,
+                        "message": "Восстановите дыхание, снизьте сопротивление",
+                        "type": "instruction",
+                        "durationSec": 5,
+                        "priority": "medium"
+                    }
+                ]
+            },
+            {
+                "type": "interval",
+                "durationSec": 60,
+                "targetPower": {
+                    "type": "constant",
+                    "value": 250
+                },
+                "targetCadence": {
+                    "min": 90,
+                    "max": 100
+                },
+                "resistance": 75,
+                "positionSettings": {
+                    "handsPosition": "aerobars",
+                    "bodyPosition": "seated"
+                }
+            },
+            {
+                "type": "recovery",
+                "durationSec": 60,
+                "targetPower": {
+                    "type": "constant",
+                    "value": 120
+                },
+                "targetCadence": {
+                    "min": 70,
+                    "max": 80
+                },
+                "resistance": 40
+            },
+            {
+                "type": "interval",
+                "durationSec": 60,
+                "targetPower": {
+                    "type": "constant",
+                    "value": 260
+                },
+                "targetCadence": {
+                    "min": 95,
+                    "max": 105
+                },
+                "resistance": 80,
+                "coachComments": [
+                    {
+                        "triggerTimeSec": 0,
+                        "message": "Финальный рывок! Удерживайте 95+ RPM",
+                        "type": "warning",
+                        "durationSec": 5,
+                        "priority": "high"
+                    }
+                ]
+            },
+            {
+                "type": "cooldown",
+                "durationSec": 120,
+                "targetPower": {
+                    "type": "ramp",
+                    "start": 150,
+                    "end": 80
+                },
+                "targetCadence": {
+                    "min": 60,
+                    "max": 70
+                },
+                "resistance": 30,
+                "positionSettings": {
+                    "handsPosition": "tops",
+                    "bodyPosition": "seated"
+                }
+            }
+        ]
+    }
+}

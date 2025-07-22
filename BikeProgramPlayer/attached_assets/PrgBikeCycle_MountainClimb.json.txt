@@ -1,0 +1,168 @@
+{
+  "formatVersion": "1.2",
+  "metadata": {
+    "id": "uuid-5678-1234-90ab-mountain001",
+    "title": "Mountain Climb Challenge",
+    "description": "Интервальная горная тренировка с чередованием подъемов и спусков",
+    "author": "AI Mountain Coach",
+    "creationDate": "2024-03-20T14:00:00Z",
+    "modificationDate": "2024-03-20T14:30:00Z",
+    "tags": ["mountain", "climbing", "endurance", "altitude"],
+    "difficulty": "hard"
+  },
+  "workoutPlan": {
+    "totalDurationSec": 2100,
+    "segments": [
+      {
+        "type": "warmup",
+        "durationSec": 300,
+        "targetPower": {
+          "type": "ramp",
+          "start": 120,
+          "end": 180
+        },
+        "targetCadence": {
+          "min": 80,
+          "max": 90
+        },
+        "resistance": 45,
+        "positionSettings": {
+          "handsPosition": "hoods",
+          "bodyPosition": "seated"
+        },
+        "coachComments": [
+          {
+            "triggerTimeSec": 0,
+            "message": "Начните с имитации подъема к базовому лагерю",
+            "type": "instruction",
+            "durationSec": 8,
+            "priority": "medium"
+          }
+        ]
+      },
+      {
+        "type": "interval",
+        "durationSec": 420,
+        "targetPower": {
+          "type": "step",
+          "value": 280
+        },
+        "targetCadence": {
+          "min": 65,
+          "max": 75
+        },
+        "resistance": 75,
+        "positionSettings": {
+          "handsPosition": "drops",
+          "bodyPosition": "standing"
+        },
+        "coachComments": [
+          {
+            "triggerTimeSec": 0,
+            "message": "Основной подъем! Сфокусируйтесь на мощности педалирования",
+            "type": "warning",
+            "durationSec": 10,
+            "priority": "high"
+          }
+        ]
+      },
+      {
+        "type": "recovery",
+        "durationSec": 180,
+        "targetPower": {
+          "type": "constant",
+          "value": 100
+        },
+        "targetCadence": {
+          "min": 95,
+          "max": 105
+        },
+        "resistance": 30,
+        "positionSettings": {
+          "handsPosition": "tops",
+          "bodyPosition": "seated"
+        }
+      },
+      {
+        "type": "interval",
+        "durationSec": 300,
+        "targetPower": {
+          "type": "ramp",
+          "start": 250,
+          "end": 320
+        },
+        "targetCadence": {
+          "min": 60,
+          "max": 70
+        },
+        "resistance": 85,
+        "coachComments": [
+          {
+            "triggerTimeSec": 0,
+            "message": "Крутой серпантин! Контролируйте дыхание",
+            "type": "motivation",
+            "durationSec": 8,
+            "priority": "high"
+          }
+        ]
+      },
+      {
+        "type": "recovery",
+        "durationSec": 240,
+        "targetPower": {
+          "type": "constant",
+          "value": 90
+        },
+        "targetCadence": {
+          "min": 100,
+          "max": 110
+        },
+        "resistance": 25,
+        "positionSettings": {
+          "bodyPosition": "seated",
+          "legFocus": "right"
+        }
+      },
+      {
+        "type": "interval",
+        "durationSec": 360,
+        "targetPower": {
+          "type": "constant",
+          "value": 300
+        },
+        "targetCadence": {
+          "min": 55,
+          "max": 65
+        },
+        "resistance": 90,
+        "coachComments": [
+          {
+            "triggerTimeSec": 0,
+            "message": "Финальный рывок к вершине! Включите резервы",
+            "type": "motivation",
+            "durationSec": 10,
+            "priority": "high"
+          }
+        ]
+      },
+      {
+        "type": "cooldown",
+        "durationSec": 300,
+        "targetPower": {
+          "type": "ramp",
+          "start": 150,
+          "end": 80
+        },
+        "targetCadence": {
+          "min": 70,
+          "max": 80
+        },
+        "resistance": 40,
+        "positionSettings": {
+          "handsPosition": "aerobars",
+          "bodyPosition": "seated"
+        }
+      }
+    ]
+  }
+}
